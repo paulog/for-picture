@@ -1,8 +1,10 @@
 0 rem !to "build/for-picture.prg"
+5 rem clear screen
 10 s=1024
-20 for i = 0 to 39
-30 poke s+i,81
+20 for i = 0 to 999
+30 poke s+i,32
 40 next i
+45 rem draw face
 50 poke 1277, 81
 51 poke 1277+40, 81
 52 poke 1277+80, 81
@@ -28,4 +30,6 @@
 73 poke 1474+80+15, 81
 74 poke 1474+40+16, 81
 75 poke 1474+16, 81
-
+78 rem wait for keypress to end progam
+79 rem so we can admire the picture
+80 get a$:if a$="" then 80
